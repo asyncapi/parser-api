@@ -27,7 +27,7 @@ Each parser will therefore maintain its own compatibility matrix between which s
 
 ### Models 
 
-Some examples of models are:
+These are the models in the intent API:
 - **AsyncAPI** is the root model. Most of the intents are here, so users don't need to navigate through the object hierarchy.
 - **Message** represents a message in your message-driven architecture. They can relate to Operations and Channels, but the relationship is not mandatory. 
 - **Channel** describes a `topic`/`channel` a Message is transmitted over by some Operation.
