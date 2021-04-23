@@ -32,7 +32,7 @@ Some examples of models are:
 - **Message** represents a message in your message-driven architecture. They can relate to Operations and Channels, but the relationship is not mandatory. 
 - **Channel** describes a `topic`/`channel` a Message is transmitted over by some Operation.
 - **Operation** describes an action performed by the Application or the Client. It links messages with channels.
-- **Server** represents a Server in your message-driven architecture. Clients connect to servers.
+- **Server** represents a Server in your message-driven architecture. Application or Client always want to connect to some server.
 - **Info** contains defined information about your Application.
 - **Schema** is used for representing [JSON Schema Draft 7](https://json-schema.org/draft-07/json-schema-release-notes.html) objects.
 - **Tag** contains metadata.
