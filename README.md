@@ -8,7 +8,7 @@ An **Intent** represents a user intention of performing an action that solves a 
 For example, `Buy five watermelons` is the intent for `Going to the fruit shop, grab five watermelons, go to the counter, pay with cash, put the watermelon in a bag, exit the shop`.
 
 Based on this principle, we have built an API based on the intents of the end-users, hiding the complexity of the tasks (do not care about going to the fruit shop, we do that for you) and providing better usability.
-We tried to cover most use cases; however, the API accepts new intents adding new intents at any moment.
+We tried to cover most use cases; however, we cannot think of every use case, so if you feel like the API is missing an intent, please create a feature request with it.
 
 Find all Parser API versions and definitions [here](docs).
 
