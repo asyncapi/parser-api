@@ -1,7 +1,7 @@
 # parser-api
 Global API definition for all AsyncAPI Parser implementations.
 
-Starting from **Parser API v2**, the API follows an Intent-driven design approach, based on user intents rather than technical mechanics.
+The API follows an Intent-driven design approach, based on user intents rather than technical mechanics.
 
 An **Intent** represents a user intention of performing an action that solves a clear use case. 
 
