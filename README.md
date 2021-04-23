@@ -38,7 +38,7 @@ These are the models in the intent API:
 - **OauthFlow** holds configuration details for a supported OAuth Flow.
 - **OauthFlows** allows configuration of the supported OAuth Flows.
 - **Operation** describes an action performed by the Application or the Client. It links messages with channels.
-- **Schema** is a superset of the [JSON Schema Specification Draft 07](https://json-schema.org/understanding-json-schema/basics.html). Beside the adjustments estated in https://www.asyncapi.com/docs/specifications/2.0.0#schemaObject, there is also a new method `name()` and `hasName()` for handling the name of the schema in case it has one.
+- **Schema** is a superset of the [JSON Schema Specification Draft 07](https://json-schema.org/understanding-json-schema/basics.html). See https://www.asyncapi.com/docs/specifications/2.0.0#schemaObject.
 - **SecurityScheme** represents security specifications for servers.
 - **Server** represents a Server in your message-driven architecture. Application or Client always want to connect to some server.
 - **ServerVariable** represents a Server Variable for server URL template substitution.
