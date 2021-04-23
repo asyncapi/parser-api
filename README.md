@@ -32,7 +32,7 @@ These are the models in the intent API:
 - **Channel** describes a `topic`/`channel` a Message is transmitted over by some Operation.
 - **Contact** contains Contact information of the Application or Client API.
 - **Correlation Id** specifies an identifier at design time that can used for message tracing and correlation.
-- **Info** contains defined information about your Application.
+- **Info** contains defined information about the Application or Client API.
 - **License** contains License information of the Application or Client API.
 - **Message** represents a message in your message-driven architecture. They can relate to Operations and Channels, but the relationship is not mandatory. 
 - **OauthFlow** holds configuration details for a supported OAuth Flow.
