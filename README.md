@@ -20,8 +20,10 @@ The upsides of using this approach are:
 - Better user experience. Intents are much simple to use and do not force users to know about all spec internals.
 - Improves resiliency to breaking changes on the final user code. Most of the time, users will **only** need to upgrade to the latest version of the parser to be up-to-date with the latest spec.
 
-All Parsers, no matters the language, should follow the Intent-driven Parser API. 
-This API is versioned so Parser implementations can maintain their compatibility matrix.
+All individual parsers are following the intent API. Even though that the individual parsers maintain an individual release cycle, changes to the intent API will force the individual parsers to update as well.
+> Say we release a new spec version and we are forced to create a breaking change and force a major version change for the intent API (say from version 2 -> 3) the individual parsers are then forced to make a major version change as well (say JS parser go from version 1 -> 2).
+
+Each parser will therefore maintain its own compatibility matrix between which specification and intent API versions are supported in which parser version.
 
 ### Models 
 
