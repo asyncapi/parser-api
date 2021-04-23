@@ -29,14 +29,20 @@ Each parser will therefore maintain its own compatibility matrix between which s
 
 These are the models in the intent API:
 - **AsyncAPI** is the root model. Most of the intents are here, so users don't need to navigate through the object hierarchy.
-- **Message** represents a message in your message-driven architecture. They can relate to Operations and Channels, but the relationship is not mandatory. 
 - **Channel** describes a `topic`/`channel` a Message is transmitted over by some Operation.
-- **Operation** describes an action performed by the Application or the Client. It links messages with channels.
-- **Server** represents a Server in your message-driven architecture. Application or Client always want to connect to some server.
+- **Contact** contains Contact information of the Application or Client API.
+- **Correlation Id** specifies an identifier at design time that can used for message tracing and correlation.
 - **Info** contains defined information about your Application.
-- **Schema** is used for representing [JSON Schema Draft 7](https://json-schema.org/draft-07/json-schema-release-notes.html) objects.
-- **Tag** contains metadata.
+- **License** contains License information of the Application or Client API.
+- **Message** represents a message in your message-driven architecture. They can relate to Operations and Channels, but the relationship is not mandatory. 
+- **OauthFlow** holds configuration details for a supported OAuth Flow.
+- **OauthFlows** allows configuration of the supported OAuth Flows.
+- **Operation** describes an action performed by the Application or the Client. It links messages with channels.
+- **Schema** is a superset of the [JSON Schema Specification Draft 07](https://json-schema.org/understanding-json-schema/basics.html). Beside the adjustments estated in https://www.asyncapi.com/docs/specifications/2.0.0#schemaObject, there is also a new method `name()` and `hasName()` for handling the name of the schema in case it has one.
 - **SecurityScheme** represents security specifications for servers.
+- **Server** represents a Server in your message-driven architecture. Application or Client always want to connect to some server.
+- **ServerVariable** represents a Server Variable for server URL template substitution.
+- **Tag** contains metadata.
 
 ## Development
 To avoid polluting the API with intents that have no apparent use case or can be replaced by a call to another model, we have defined the following rule:
