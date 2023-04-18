@@ -31,20 +31,29 @@ These are the most important models in this API:
 - **AsyncAPIDocument** is the root model. Most of the intents are here, so users don't need to navigate through the object hierarchy.
 - **Binding** is a mechanism to define protocol-specific information.
 - **Channel** describes a `topic`/`channel` a Message is transmitted over by some Operation.
+- **ChannelParameter** represents a Channel Parameter for channel address template substitution.
 - **Components** holds a set of reusable objects for different aspects of the AsyncAPI specification. 
 - **Contact** contains Contact information of the Application or Client API.
 - **CorrelationId** specifies an identifier at design time that can be used for message tracing and correlation.
+- **Extension** represents the value of a single object extensions.
+- **ExternalDocumention** contains external documentation source described by External Documentation.
 - **Info** contains defined information about the Application or Client API.
 - **License** contains License information of the Application or Client API.
 - **Message** represents a message in your message-driven architecture. They can relate to Operations and Channels, but the relationship is not mandatory. 
+- **MessageExample** defines sample payload and headers examples of the described Message.
+- **MessageTrait** defines reusable Message parts.
 - **OAuthFlow** holds configuration details for a supported OAuth Flow.
 - **OAuthFlows** allows configuration of the supported OAuth Flows.
 - **Operation** describes an action performed by the Application or the Client. It links messages with channels.
+- **OperationTrait** defines reusable Operation parts.
 - **Schema** is a superset of the [JSON Schema Specification Draft 07](https://json-schema.org/understanding-json-schema/basics.html). See https://www.asyncapi.com/docs/specifications/latest#schemaObject.
 - **SecurityScheme** represents security specifications for servers.
 - **Server** represents a Server in your message-driven architecture. Application or Client always wants to connect to some server.
 - **ServerVariable** represents a Server Variable for server URL template substitution.
-- **Tag** contains metadata
+- **Tag** contains metadata described by Tag.
+
+> **Note**
+> Each model described has its corresponding collection model (except **AsyncAPIDocument**), such as **Servers**.
 
 ## Development
 To avoid polluting the API with intents that have no clear use case or can be replaced by a call to another model, we have defined the following rule:
