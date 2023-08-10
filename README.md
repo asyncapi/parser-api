@@ -1,4 +1,5 @@
 # parser-api
+
 Global API definition for all AsyncAPI Parser implementations.
 
 The API follows an Intent-driven design approach based on user intents rather than technical mechanics.
@@ -10,7 +11,7 @@ For example, `Buy five watermelons` is the intent for `Going to the fruit shop, 
 Based on this principle, we have built an API based on the intents of the end-users, hiding the complexity of the tasks (do not care about going to the fruit shop, we do that for you) and providing better usability.
 We tried to cover most use cases; however, we cannot think of every use case, so if you feel the API is missing an intent, please create a feature request with it.
 
-Find all Parser API versions and definitions [here](docs).
+Find the documentation for the current Parser API in [docs/api.md](docs/api.md).
 
 ## Design
 
@@ -28,6 +29,7 @@ Each parser will therefore maintain its own compatibility matrix between which s
 ### Models 
 
 These are the most important models in this API:
+
 - **AsyncAPIDocument** is the root model. Most of the intents are here, so users don't need to navigate through the object hierarchy.
 - **Binding** is a mechanism to define protocol-specific information.
 - **Channel** describes a `topic`/`channel` a Message is transmitted over by some Operation.
@@ -39,15 +41,18 @@ These are the most important models in this API:
 - **ExternalDocumention** contains external documentation source described by External Documentation.
 - **Info** contains defined information about the Application or Client API.
 - **License** contains License information of the Application or Client API.
-- **Message** represents a message in your message-driven architecture. They can relate to Operations and Channels, but the relationship is not mandatory. 
+- **Message** represents a message in your message-driven architecture. They can relate to Operations and Channels, but the relationship is not mandatory.
 - **MessageExample** defines sample payload and headers examples of the described Message.
 - **MessageTrait** defines reusable Message parts.
 - **OAuthFlow** holds configuration details for a supported OAuth Flow.
 - **OAuthFlows** allows configuration of the supported OAuth Flows.
 - **Operation** describes an action performed by the Application or the Client. It links messages with channels.
+- **OperationReply** describes the reply characteristic in a request-reply Operation.
+- **OperationReplyAddress** defines the address for the Operation Reply.
 - **OperationTrait** defines reusable Operation parts.
 - **Schema** is a superset of the [JSON Schema Specification Draft 07](https://json-schema.org/understanding-json-schema/basics.html). See https://www.asyncapi.com/docs/specifications/latest#schemaObject.
-- **SecurityScheme** represents security specifications for servers.
+- **SecurityRequirement** represents used Security Scheme as security mechanism for Server and Operation with possible scopes.
+- **SecurityScheme** represents security specification for Server and Operation.
 - **Server** represents a Server in your message-driven architecture. Application or Client always wants to connect to some server.
 - **ServerVariable** represents a Server Variable for server URL template substitution.
 - **Tag** contains metadata described by Tag.
@@ -56,6 +61,7 @@ These are the most important models in this API:
 > Each model described has its corresponding collection model (except **AsyncAPIDocument**), such as **Servers**.
 
 ## Development
+
 To avoid polluting the API with intents that have no clear use case or can be replaced by a call to another model, we have defined the following rule:
 
 Intents at the root model (`AsyncAPI`) **SHOULD** never return properties of other models but instead answer questions, return the model itself or a collection of models.
