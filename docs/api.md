@@ -1,4 +1,4 @@
-# AsyncAPI Parser API v1.0.0
+# AsyncAPI Parser API v2.0.0
 
 ## AsyncAPIDocument
 - version(): `string`
@@ -40,8 +40,15 @@
 - operations(): `Operations`
 - messages(): `Messages`
 - parameters(): `ChannelParameters`
+- hasTitle(): `boolean`
+- title(): `string` | `undefined`
+- hasSummary(): `boolean`
+- summary(): `string` | `undefined`
 - hasDescription(): `boolean`
 - description(): `string` | `undefined`
+- hasExternalDocs(): `boolean`
+- externalDocs(): `ExternalDocumention` | `undefined`
+- tags(): `Tags`
 - bindings(): `Bindings`
 - extensions(): `Extensions`
 
@@ -51,6 +58,7 @@
 - filterBy(filter: `(channel: Channel) => boolean`): `Channel[]`
 - filterBySend(): `Channel[]`
 - filterByReceive(): `Channel[]`
+- filterByTags(tags: `string[]`): `Channel[]`
 - get(id: `string`): `Channel` | `undefined`
 - has(id: `string`): `boolean`
 
@@ -81,8 +89,12 @@
 - serverVariables(): `ServerVariables`
 - operationTraits(): `OperationTraits`
 - messageTraits(): `MessageTraits`
+- replies(): `OperationReplies`
+- replyAddresses(): `OperationReplyAddresses`
 - correlationIds(): `CorrelationIds`
 - securitySchemes(): `SecuritySchemes`
+- tags(): `Tags`;
+- externalDocs(): `ExternalDocumentations`;
 - serverBindings(): `Map<string, Bindings>`
 - channelBindings(): `Map<string, Bindings>`
 - operationBindings(): `Map<string, Bindings>`
@@ -123,6 +135,7 @@
 - has(id: `string`): `boolean`
 
 ## ExternalDocumention
+- id(): `string` | `undefined`
 - url(): `string`
 - hasDescription(): `boolean`
 - description(): `string` | `undefined`
@@ -154,7 +167,8 @@
 
 ## Message
 - id(): `string`
-- schemaFormat(): `string`
+- hasSchemaFormat(): `boolean`
+- schemaFormat(): `string` | `undefined`
 - hasMessageId(): `boolean`
 - messageId(): `string` | `undefined`
 - hasCorrelationId(): `boolean`
@@ -190,6 +204,7 @@
 - filterBy(filter: `(message: Message) => boolean`): `Message[]`
 - filterBySend(): `Message[]`
 - filterByReceive(): `Message[]`
+- filterByTags(tags: `string[]`): `Message[]`
 - get(id: `string`): `Message` | `undefined`
 - has(id: `string`): `boolean`
 
@@ -211,7 +226,8 @@
 
 ## MessageTrait
 - id(): `string`
-- schemaFormat(): `string`
+- hasSchemaFormat(): `boolean`
+- schemaFormat(): `string` | `undefined`
 - hasMessageId(): `boolean`
 - messageId(): `string` | `undefined`
 - hasCorrelationId(): `boolean`
@@ -270,6 +286,8 @@
 - isReceive(): `boolean`
 - hasOperationId(): `boolean`
 - operationId(): `string` | `undefined`
+- hasTitle(): `boolean`
+- title(): `string` | `undefined`
 - hasSummary(): `boolean`
 - summary(): `string` | `undefined`
 - hasDescription(): `boolean`
@@ -281,6 +299,7 @@
 - servers(): `Servers`
 - channels(): `Channels`
 - messages(): `Messages`
+- reply(): `OperationReply` | `undefined`
 - traits(): `OperationTraits`
 - bindings(): `Bindings`
 - extensions(): `Extensions`
@@ -291,13 +310,46 @@
 - filterBy(filter: `(operation: Operation) => boolean`): `Operation[]`
 - filterBySend(): `Operation[]`
 - filterByReceive(): `Operation[]`
+- filterByTags(tags: `string[]`): `Operation[]`
 - get(id: `string`): `Operation` | `undefined`
+- has(id: `string`): `boolean`
+
+## OperationReply
+- id(): `string` | `undefined`
+- hasAddress(): `boolean`
+- address(): `OperationReplyAddress` | `undefined`
+- hasChannel(): `boolean`
+- channel(): `Channel` | `undefined`
+- messages(): `Messages`
+- extensions(): `Extensions`
+
+## OperationReplies
+- all(): `OperationReply[]`
+- isEmpty(): `boolean`
+- filterBy(filter: `(reply: OperationReply) => boolean`): `OperationReply[]`
+- get(id: `string`): `OperationReply` | `undefined`
+- has(id: `string`): `boolean`
+
+## OperationReplyAddress
+- id(): `string` | `undefined`
+- location(): `string`
+- hasDescription(): `boolean`
+- description(): `string` | `undefined`
+- extensions(): `Extensions`
+
+## OperationReplyAddresses
+- all(): `OperationReplyAddress[]`
+- isEmpty(): `boolean`
+- filterBy(filter: `(address: OperationReplyAddress) => boolean`): `OperationReplyAddress[]`
+- get(id: `string`): `OperationReplyAddress` | `undefined`
 - has(id: `string`): `boolean`
 
 ## OperationTrait
 - id(): `string`
 - hasOperationId(): `boolean`
 - operationId(): `string` | `undefined`
+- hasTitle(): `boolean`
+- title(): `string` | `undefined`
 - hasSummary(): `boolean`
 - summary(): `string` | `undefined`
 - hasDescription(): `boolean`
@@ -362,6 +414,7 @@
 - propertyNames(): `Schema` | `undefined`
 - readOnly(): `boolean` | `undefined`
 - required(): `string[]` | `undefined`
+- schemaFormat(): `string`
 - then(): `Schema` | `undefined`
 - title(): `string` | `undefined`
 - type(): `string` | `string[]` | `undefined`
@@ -415,17 +468,26 @@
 ## Server
 - id(): `string`
 - url(): `string`
+- host(): `string`
 - protocol(): `string`
+- hasPathname(): `boolean`
+- pathname(): `string` | `undefined`
 - hasProtocolVersion(): `boolean`
 - protocolVersion(): `string` | `undefined`
+- hasTitle(): `boolean`
+- title(): `string` | `undefined`
+- hasSummary(): `boolean`
+- summary(): `string` | `undefined`
 - hasDescription(): `boolean`
 - description(): `string` | `undefined`
 - variables(): `ServerVariables`
 - security(): `SecurityRequirements[]`
+- hasExternalDocs(): `boolean`
+- externalDocs(): `ExternalDocumention` | `undefined`
+- tags(): `Tags`
 - channels(): `Channels`
 - operations(): `Operations`
 - messages(): `Messages`
-- tags(): `Tags`
 - bindings(): `Bindings`
 - extensions(): `Extensions`
 
@@ -435,6 +497,7 @@
 - filterBy(filter: `(server: Server) => boolean`): `Server[]`
 - filterBySend(): `Server[]`
 - filterByReceive(): `Server[]`
+- filterByTags(tags: `string[]`): `Server[]`
 - get(id: `string`): `Server` | `undefined`
 - has(id: `string`): `boolean`
 
@@ -457,6 +520,7 @@
 - has(id: `string`): `boolean`
 
 ## Tag
+- id(): `string` | `undefined`
 - name(): `string`
 - hasDescription(): `boolean`
 - description(): `string` | `undefined`
