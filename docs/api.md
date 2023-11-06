@@ -1,4 +1,4 @@
-# AsyncAPI Parser API v2.0.0
+# AsyncAPI Parser API v3.0.0
 
 ## AsyncAPIDocument
 - version(): `string`
@@ -170,7 +170,6 @@
 - hasSchemaFormat(): `boolean`
 - schemaFormat(): `string` | `undefined`
 - hasMessageId(): `boolean`
-- messageId(): `string` | `undefined`
 - hasCorrelationId(): `boolean`
 - correlationId(): `CorrelationId` | `undefined`
 - hasContentType(): `boolean`
@@ -229,7 +228,6 @@
 - hasSchemaFormat(): `boolean`
 - schemaFormat(): `string` | `undefined`
 - hasMessageId(): `boolean`
-- messageId(): `string` | `undefined`
 - hasCorrelationId(): `boolean`
 - correlationId(): `CorrelationId` | `undefined`
 - hasContentType(): `boolean`
