@@ -1,4 +1,4 @@
-# AsyncAPI Parser API v2.0.0
+# AsyncAPI Parser API v3.0.0
 
 ## AsyncAPIDocument
 - version(): `string`
