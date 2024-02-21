@@ -52,13 +52,9 @@ In v2, the return type of `schemaFormat()` in `Message` and `MessageTrait` objec
 # AsyncAPI Parser API v2.0.0
 ...
 ## Message
-- id(): `string`
-- hasSchemaFormat(): `boolean`
 - schemaFormat(): `string`
 ...
 ## MessageTrait
-- id(): `string`
-- hasSchemaFormat(): `boolean`
 - schemaFormat(): `string`
 ```
 
@@ -68,12 +64,8 @@ In v3, the return type has been changed to `string | undefined`, emphasizing tha
 # AsyncAPI Parser API v3.0.0
 ...
 ## Message
-- id(): `string`
-- hasSchemaFormat(): `boolean`
 - schemaFormat(): `string` | `undefined`
 ...
 ## MessageTrait
-- id(): `string`
-- hasSchemaFormat(): `boolean`
 - schemaFormat(): `string` | `undefined`
 ```
