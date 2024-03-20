@@ -16,6 +16,18 @@
 - allOperations(): `Operations`
 - allMessages(): `Messages`
 - allSchemas(): `Schemas`
+- allSecuritySchemes(): `SecuritySchemes`
+- allServerVariables(): `ServerVariables`
+- allParameters(): `Parameters`
+- allCorrelationIds(): `CorrelationIds`
+- allReplies(): `Replies`;
+- allTags(): `Tags`
+- allOperationTraits(): `OperationTraits`
+- allMessageTraits(): `MessageTraits`
+- allServerBindings(): `ServerBindings`
+- allChannelBindings(): `ChannelBindings`
+- allOperationBindings(): `OperationBindings`
+- allMessageBindings(): `MessageBindings`
 - components(): `Components`
 - extensions(): `Extensions`
 
