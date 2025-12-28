@@ -51,6 +51,7 @@
 - tags(): `Tags`
 - bindings(): `Bindings`
 - extensions(): `Extensions`
+- filterByAddress(address: string): Channels
 
 ## Channels
 - all(): `Channel[]`
